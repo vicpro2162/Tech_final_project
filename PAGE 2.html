@@ -223,7 +223,10 @@
       padding: 0;
       margin: 0 8px;
       cursor: pointer;
-      display: inline-block;
+      font-size: 1.1rem;
+      display: flex;
+      color: white;
+      text-decoration: none;
     }
 
     .copy-btn img {
@@ -309,7 +312,7 @@
       <a href="PAGE 1.html#pro" class="active">Programmes</a>
       <a href="PAGE 1.html#formateurs">Formateurs</a>
       <a href="PAGE 1.html#technologies">Technologies</a>
-      <a href="PAGE 1.html#contact" class="contact">Contacts</a>
+      <a href="./contacte.html" class="contact">Contacts</a>
     </div>
   </header>
 
@@ -397,7 +400,7 @@
     </div>
   </main>
 
-  <footer>
+  <footer id="contact">
     <div class="logoBourse">
       <img src="./img/logo.png" alt="Logo de Club Tech" />
     </div>
@@ -411,12 +414,15 @@
     </button>
 
     <button class="copy-btn" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
-      <img src="./img/At sign.png" alt="Email">
-    </button>
+      <img src="./img/At sign.png" alt="Email"> </button>
 
     <button class="copy-btn" type="button" data-copy="@techacademy.tg" aria-label="Copier Instagram">
       <img src="./img/Instagram.png" alt="Instagram">
     </button>
+
+    <a class="copy-btn" href="./contacte.html" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+      <img src="./img/Icon(1).png" alt="Email"> Ecrivez-nous</a>
+
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

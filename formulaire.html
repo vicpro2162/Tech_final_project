@@ -149,6 +149,7 @@
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -160,7 +161,7 @@
         <h1>Inscription Bourse Tech</h1>
         <p class="subtitle">Rejoignez notre programme pour développer vos compétences numériques</p>
 
-        <form action="./submit-inscription.html" method="POST">
+        <form id="inscriptionForm" method="POST">
             <div class="form-group">
                 <label for="nom">Nom complet <span class="required">*</span></label>
                 <input type="text" id="nom" name="nom" required>
@@ -219,6 +220,55 @@
             <a href="PAGE 1.html">← Retour à l'accueil</a>
         </div>
     </div>
+    <script>
+        const form = document.getElementById('inscriptionForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const inscription = {
+                nom: form.nom.value.trim(),
+                email: form.email.value.trim().toLowerCase(),
+                telephone: form.telephone.value.trim(),
+                age: form.age.value || null,
+                ville: form.ville.value.trim(),
+                niveau: form.niveau.value,
+                motivation: form.motivation.value.trim(),
+                conditions: form.conditions.checked,
+                dateInscription: new Date().toISOString()
+            };
+
+            const saved = localStorage.getItem('inscriptions');
+            const inscriptions = saved ? JSON.parse(saved) : [];
+
+            // Vérifier si l'email (et éventuellement le nom) existe déjà
+            const existeDeja = inscriptions.some(item =>
+                item.email === inscription.email
+                // && item.nom.toLowerCase() === inscription.nom.toLowerCase()
+            );
+
+            if (existeDeja) {
+                alert('Une inscription avec cet email existe déjà.');
+                return;
+            }
+
+            inscriptions.push(inscription);
+            localStorage.setItem('inscriptions', JSON.stringify(inscriptions));
+
+            form.reset();
+
+            console.log('Inscriptions sauvegardées :', inscriptions);
+            console.log('Redirection vers submit-inscription.html');
+            window.location.href = 'submit-inscription.html';
+        });
+    </script>
+
+    <script>
+        const saved = localStorage.getItem('inscriptions');
+        const inscriptions = saved ? JSON.parse(saved) : [];
+        console.log('Sur submit-inscription.html :', inscriptions);
+    </script>
+
 </body>
 
 </html>

@@ -390,9 +390,10 @@
       justify-content: center;
       align-items: center;
       gap: 50px;
-      flex-wrap: wrap;
+      flex-wrap: no-wrap;
       width: 122.2%;
       top: 100px;
+
     }
 
     /* Logo */
@@ -409,7 +410,8 @@
       padding: 0;
       margin: 0 8px;
       cursor: pointer;
-      display: inline-block;
+      display: flex;
+      color: #fbfcfc;
     }
 
     .copy-btn img {
@@ -417,7 +419,13 @@
       height: 32px;
       display: block;
       filter: brightness(0) invert(1);
+      white-space: nowrap;
+      /* Empêche le retour à la ligne */
+      flex-shrink: 0;
+      /* Empêche le rétrécissement */
     }
+
+
 
     /* Toast */
     .toast {
@@ -479,7 +487,7 @@
       <a href="#pro" class="programme">Programmes</a>
       <a href="#formateurs" class="formateurs">Formateurs</a>
       <a href="#technologies" class="technologies">Technologies</a>
-      <a href="#contact" class="contact">Contacts</a>
+      <a href="./contacte.html" class="contact">Contacts</a>
     </nav>
   </header>
   <section class="services-banner">
@@ -590,6 +598,7 @@
       </div>
     </div>
   </section>
+
   <footer id="contact">
     <div class="logoBourse">
       <img src="./img/logo.png" alt="Logo de Club Tech" />
@@ -604,18 +613,21 @@
     </button>
 
     <button class="copy-btn" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
-      <img src="./img/At sign.png" alt="Email">
-    </button>
+      <img src="./img/At sign.png" alt="Email"> </button>
 
     <button class="copy-btn" type="button" data-copy="@techacademy.tg" aria-label="Copier Instagram">
       <img src="./img/Instagram.png" alt="Instagram">
     </button>
+
+    <a class="copy-btn" href="./contacte.html" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+      <img src="./img/Icon(1).png" alt="Email"> Ecrivez-nous</a>
+
   </footer>
 
   <!-- Toast -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="a11y" class="sr-only" aria-live="polite"></div>
-  <SCript>
+  <script>
     const buttons = document.querySelectorAll('.copy-btn');
     const toast = document.getElementById('toast');
     const a11y = document.getElementById('a11y');
@@ -660,7 +672,7 @@
         else showToast('Échec — copiez manuellement.');
       });
     });
-  </SCript>
+  </script>
   <script src="./js/main.js">
 
   </script>

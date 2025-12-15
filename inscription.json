@@ -1,0 +1,15 @@
+{
+  "inscriptions": [
+    {
+      "nom": "Jean Dupont",
+      "email": "jean.dupont@example.com",
+      "telephone": "+33123456789",
+      "age": 18,
+      "ville": "Paris",
+      "niveau": "lycee",
+      "motivation": "Je veux développer mes compétences numériques.",
+      "conditions": true,
+      "dateInscription": "2025-12-15T09:40:00Z"
+    }
+  ]
+}
