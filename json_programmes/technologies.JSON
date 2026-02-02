@@ -1,0 +1,74 @@
+[
+  {
+    "id_technologies": "technologie_A",
+    "nom": "Word",
+    "version": "3.0", 
+    "icone": "img/word.png",
+    "categorie": "Traitement de texte"
+  },
+  {
+    "id_technologies": "technologie_B",
+    "nom": "Excel",
+    "version": "", 
+    "icone": "img/excel.png",
+    "categorie": "Tableur"
+  },
+  {
+    "id_technologies": "technologie_C",
+    "nom": "PowerPoint",
+    "version": "",
+    "icone": "img/Powerpoint Icon.jpg",
+    "categorie": "Présentation"
+  },
+  {
+    "id_technologies": "technologie_D",
+    "nom": "Canva",
+    "icone": "img/Canva Design.jpg",
+    "version": "",
+    "categorie": "design graphique."
+  },
+   {
+    "id_technologies": "technologie_E",
+    "nom": "Scratch",
+    "icone": "img/Scratch.jpg",
+    "version": "",
+    "categorie": "programmation visuelle"
+  },
+   {
+    "id_technologies": "technologie_F",
+    "nom": "HTML",
+    "icone": "img/html-5.png",
+    "version": "",
+    "categorie": "Programmation web"
+  },
+   {
+    "id_technologies": "technologie_G",
+    "nom": "CSS",
+    "icone": "img/css.png",
+    "version": "",
+    "categorie": "Programmation web"
+  },
+   {
+    "id_technologies": "technologie_H",
+    "nom": "JavaScript",
+    "icone": "img/js.png",
+    "version": "",
+    "categorie": "Programmation web"
+  },
+   {
+    "id_technologies": "technologie_I",
+    "nom": "Diagramme de Gantt",
+    "icone": "img/gantt.png",
+    "version": "",
+    "categorie": "Planifier les tâches"
+  },
+   {
+    "id_technologies": "technologie_J",
+    "nom": "Python",
+    "icone": "img/gantt.png",
+    "version": "34.0",
+    "categorie": "Programmation web"
+  }
+  ]
+
+ 
