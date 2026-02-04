@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages Reçus - Bourse Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Century Gothic", Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3E82E8 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #3E82E8;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3E82E8;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #3E82E8 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody tr:hover {
+            background: #f9f9f9;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state h2 {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 2px;
+        }
+
+        .action-btn-view {
+            background: #3E82E8;
+            color: white;
+        }
+
+        .action-btn-view:hover {
+            background: #2a5aa0;
+        }
+
+        .action-btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .action-btn-delete:hover {
+            background: #c82333;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: #3E82E8;
+            margin: 0;
+        }
+
+        .message-field {
+            margin-bottom: 15px;
+        }
+
+        .message-field label {
+            font-weight: bold;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .message-field p {
+            color: #333;
+            margin: 0;
+            word-break: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .controls .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>📧 Messages Reçus</h1>
+            <p>Consultez tous les messages envoyés depuis la page de contact</p>
+            <div class="controls">
+                <a href="contacte.html" class="btn btn-primary">← Retour au contact</a>
+                <button onclick="exportJSON()" class="btn btn-secondary">📥 Export JSON</button>
+                <button onclick="clearAll()" class="btn btn-danger">🗑️ Tout Supprimer</button>
+            </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3>📧 Total</h3>
+                <div class="value" id="statTotal">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>🆕 Non Lus</h3>
+                <div class="value" id="statNonLus">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>👀 En Cours</h3>
+                <div class="value" id="statEnCours">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>✅ Traités</h3>
+                <div class="value" id="statTraites">0</div>
+            </div>
+        </div>
+
+        <!-- Table des messages -->
+        <div class="table-container">
+            <table id="messagesTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Sujet</th>
+                        <th>Message</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="messagesTableBody">
+                </tbody>
+            </table>
+            <div id="emptyState" class="empty-state" style="display:none;">
+                <h2>📭 Aucun message</h2>
+                <p>Il n'y a aucun message pour le moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de détail -->
+    <div class="modal" id="messageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Détail du Message</h2>
+            </div>
+            <div id="modalBody">
+            </div>
+        </div>
+    </div>
+
+    <script src="contacte.js"></script>
+    <script>
+        let allMessages = [];
+
+        console.log('🔍 Script de visualisation des messages chargé');
+
+        // Charger les messages au démarrage
+        window.addEventListener('load', function () {
+            console.log('📦 Événement load');
+            setTimeout(loadMessages, 500);
+        });
+
+        /**
+         * Charger tous les messages
+         */
+        function loadMessages() {
+            console.log('📂 Chargement des messages...');
+            try {
+                if (!window.messageManager) {
+                    console.error('❌ messageManager n\'existe pas');
+                    return;
+                }
+
+                allMessages = window.messageManager.getAll();
+                console.log('📧 Messages chargés:', allMessages.length);
+                renderTable();
+                updateStats();
+            } catch (error) {
+                console.error('❌ Erreur lors du chargement:', error);
+            }
+        }
+
+        /**
+         * Afficher le tableau des messages
+         */
+        function renderTable() {
+            console.log('🎨 Rendu du tableau');
+            const tbody = document.getElementById('messagesTableBody');
+            const emptyState = document.getElementById('emptyState');
+
+            if (allMessages.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            tbody.innerHTML = allMessages.map(msg => `
+                <tr>
+                    <td>${new Date(msg.dateEnvoi).toLocaleString('fr-FR')}</td>
+                    <td><strong>${msg.nom}</strong></td>
+                    <td>${msg.email}</td>
+                    <td><span class="badge">${msg.sujet}</span></td>
+                    <td>${msg.message.substring(0, 40)}...</td>
+                    <td>
+                        <button class="action-btn action-btn-view" onclick="viewMessage(${msg.id})">👁️ Voir</button>
+                        <button class="action-btn action-btn-delete" onclick="deleteMessage(${msg.id})">🗑️</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        /**
+         * Voir le détail d'un message
+         */
+        function viewMessage(id) {
+            const message = window.messageManager.getById(id);
+            if (!message) return;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="message-field">
+                    <label>Nom</label>
+                    <p>${message.nom}</p>
+                </div>
+                <div class="message-field">
+                    <label>Email</label>
+                    <p><a href="mailto:${message.email}">${message.email}</a></p>
+                </div>
+                <div class="message-field">
+                    <label>Téléphone</label>
+                    <p>${message.telephone || '-'}</p>
+                </div>
+                <div class="message-field">
+                    <label>Sujet</label>
+                    <p>${message.sujet}</p>
+                </div>
+                <div class="message-field">
+                    <label>Date d'envoi</label>
+                    <p>${new Date(message.dateEnvoi).toLocaleString('fr-FR')}</p>
+                </div>
+                <div class="message-field">
+                    <label>Message</label>
+                    <p style="background: #f9f9f9; padding: 15px; border-radius: 8px; white-space: pre-wrap;">${message.message}</p>
+                </div>
+            `;
+
+            document.getElementById('messageModal').classList.add('active');
+        }
+
+        /**
+         * Supprimer un message
+         */
+        function deleteMessage(id) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce message?')) {
+                window.messageManager.delete(id);
+                loadMessages();
+            }
+        }
+
+        /**
+         * Mettre à jour les statistiques
+         */
+        function updateStats() {
+            try {
+                const stats = window.messageManager.getStats();
+                document.getElementById('statTotal').textContent = stats.total;
+                document.getElementById('statNonLus').textContent = stats.nonLus;
+                document.getElementById('statEnCours').textContent = stats.enCours;
+                document.getElementById('statTraites').textContent = stats.traites;
+            } catch (error) {
+                console.error('❌ Erreur stats:', error);
+            }
+        }
+
+        /**
+         * Exporter en JSON
+         */
+        function exportJSON() {
+            try {
+                const messages = window.messageManager.getAll();
+                const dataStr = JSON.stringify(messages, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `messages-contact-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+                URL.revokeObjectURL(url);
+                alert('✅ Export JSON terminé!');
+            } catch (error) {
+                alert('❌ Erreur lors de l\'export: ' + error.message);
+            }
+        }
+
+        /**
+         * Supprimer tous les messages
+         */
+        function clearAll() {
+            if (confirm('⚠️ ATTENTION: Vous êtes sur le point de SUPPRIMER TOUS les messages.\n\nÊtes-vous absolument sûr?')) {
+                if (confirm('Confirmez encore une fois...')) {
+                    window.messageManager.clearAll();
+                    loadMessages();
+                    alert('✅ Tous les messages ont été supprimés.');
+                }
+            }
+        }
+
+        // Fermer la modal en cliquant en dehors
+        document.getElementById('messageModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

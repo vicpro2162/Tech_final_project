@@ -337,14 +337,14 @@
 <body>
     <!-- Header -->
     <header class="entete">
-        <div href="./PAGE 1.html" class="logo">
+        <div href="./page1.html" class="logo">
             <img src="./img/logo.png" alt="Logo de Club Tech" />
         </div>
         <nav class="menu">
-            <a href="PAGE 1.html">Services</a>
-            <a href="PAGE 1.html#pro" class="active">Programmes</a>
-            <a href="PAGE 1.html#formateurs">Formateurs</a>
-            <a href="PAGE 1.html#technologies">Technologies</a>
+            <a href=".html">Services</a>
+            <a href="page1.html#pro" class="active">Programmes</a>
+            <a href="page1.html#formateurs">Formateurs</a>
+            <a href="page1.html#technologies">Technologies</a>
             <a href="./contacte.html" class="contact">Contacts</a>
         </nav>
     </header>
@@ -362,7 +362,7 @@
             <div class="contact-card">
                 <div class="contact-icon">📧</div>
                 <h3>Email</h3>
-                <div class="contact-info" onclick="copyToClipboard('tech@gmail.com')">tech@gmail.com</div>
+                <div class="contact-info" onclick="copyToClipboard('educ@techacademy.tech')">educ@techacademy.tech</div>
             </div>
 
             <div class="contact-card">
@@ -446,9 +446,7 @@
             <img src="./img/Instagram.png" alt="Instagram">
         </button>
 
-        <a class="copy-btn" href="./contacte.html" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
-            <img src="./img/Icon(1).png" alt="Email"> Ecrivez-nous</a>
-
+    
     </footer>
 
     <script>
@@ -493,41 +491,7 @@
         });
     </script>
 
-    <!-- Sauvegarde en local -->
-    <script>
-        const contactForm = document.getElementById('contactForm');
-
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Empêche l'envoi classique
-
-            // 1. Construire un objet avec les valeurs du formulaire
-            const messageContact = {
-                nom: contactForm.nom.value.trim(),
-                email: contactForm.email.value.trim(),
-                telephone: contactForm.telephone.value.trim(),
-                sujet: contactForm.sujet.value,
-                message: contactForm.message.value.trim(),
-                dateEnvoi: new Date().toISOString()
-            };
-
-            // 2. Récupérer les anciens messages
-            const saved = localStorage.getItem('messagesContact');
-            const messages = saved ? JSON.parse(saved) : [];
-
-            // 3. Ajouter le nouveau
-            messages.push(messageContact);
-
-            // 4. Sauvegarder dans le localStorage
-            localStorage.setItem('messagesContact', JSON.stringify(messages));
-
-            // 5. Retour visuel + reset du formulaire
-            showToast('Votre message a bien été enregistré !');
-            contactForm.reset();
-
-            console.log('Messages de contact :', messages);
-        });
-    </script>
-
+    <script src="contacte.js"></script>
 </body>
 
 </html>

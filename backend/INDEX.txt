@@ -1,0 +1,62 @@
+🎯 BOURSE TECH - SYSTÈME D'INSCRIPTION v2.0
+
+📍 COMMENCER ICI
+================
+👉 Ouvrez: hub.html
+
+🔗 LIENS DIRECTS
+================
+📝 Formulaire ............. inscriptions.html
+✅ Confirmation ........... submit-inscription-copie.html
+📊 Dashboard .............. admin-inscriptions.html
+🛠️ Utilitaires ............ inscription-utils.js
+📚 Documentation .......... README.md / RESUME_COMPLET.md
+
+✨ FONCTIONNALITÉS
+==================
+✅ Formulaire moderne et responsive
+✅ Sauvegarde dans localStorage
+✅ Dashboard d'administration
+✅ Export JSON / CSV
+✅ Gestion complète des inscriptions
+✅ Validation automatique des doublons
+✅ Design élégant avec animations
+
+💾 DONNÉES
+==========
+✅ Stockées localement dans localStorage
+✅ Aucune transmission réseau
+✅ Accessible depuis la console (F12)
+
+🚀 COMMANDES RAPIDES
+====================
+F12 → Ouvrir Console
+Puis taper:
+
+window.inscriptionManager.getAll()
+window.inscriptionManager.getStats()
+window.inscriptionManager.exportAsJSON()
+
+📱 SUPPORT
+==========
+✅ Chrome / Firefox / Safari
+✅ Mobile / Tablette / Desktop
+✅ Responsive design complet
+
+🔒 SÉCURITÉ
+===========
+✅ Données locales
+✅ Aucun serveur externe
+✅ Vérification des doublons
+
+📞 AIDE
+=======
+Consultez: README.md ou RESUME_COMPLET.md
+
+⭐ PRÊT À L'EMPLOI ⭐
+====================
+Version: 2.0
+Status: ✅ COMPLET
+Date: Février 2026
+
+Bonne utilisation! 🎉

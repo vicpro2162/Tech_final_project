@@ -14,7 +14,7 @@
 
         body {
             font-family: "Century Gothic", sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -26,9 +26,21 @@
             background: white;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             width: 100%;
-            max-width: 500px;
+            max-width: 550px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .logo {
@@ -39,6 +51,7 @@
         .logo img {
             width: 120px;
             height: auto;
+            max-width: 100%;
         }
 
         h1 {
@@ -46,13 +59,15 @@
             color: #3E82E8;
             margin-bottom: 10px;
             font-size: 28px;
+            font-weight: 700;
         }
 
         .subtitle {
             text-align: center;
             color: #666;
             margin-bottom: 30px;
-            font-size: 16px;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .form-group {
@@ -67,7 +82,10 @@
             font-size: 14px;
         }
 
-        input,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
         select,
         textarea {
             width: 100%;
@@ -75,41 +93,70 @@
             border: 2px solid #e1e5e9;
             border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.3s ease;
+            font-family: inherit;
+            transition: all 0.3s ease;
         }
 
-        input:focus,
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
         select:focus,
         textarea:focus {
             outline: none;
             border-color: #3E82E8;
+            box-shadow: 0 0 0 3px rgba(62, 130, 232, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
         }
 
         .required {
             color: #e74c3c;
+            font-weight: 700;
         }
 
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 25px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
         }
 
         .checkbox-group input[type="checkbox"] {
             width: auto;
             margin: 0;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: #3E82E8;
         }
 
         .checkbox-label {
             font-size: 14px;
-            color: #666;
-            line-height: 1.4;
+            color: #555;
+            line-height: 1.5;
+            font-weight: normal;
+        }
+
+        .checkbox-label a {
+            color: #3E82E8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .checkbox-label a:hover {
+            color: #2c5aa0;
+            text-decoration: underline;
         }
 
         .submit-btn {
             width: 100%;
-            background: #3E82E8;
+            background: linear-gradient(135deg, #3E82E8 0%, #2c5aa0 100%);
             color: white;
             border: none;
             padding: 15px;
@@ -117,35 +164,86 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(62, 130, 232, 0.3);
         }
 
         .submit-btn:hover {
-            background: #2c5aa0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(62, 130, 232, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
         }
 
         .back-link {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .back-link a {
             color: #3E82E8;
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .back-link a:hover {
+            color: #2c5aa0;
             text-decoration: underline;
         }
 
         @media (max-width: 600px) {
             .form-container {
                 padding: 25px;
+                border-radius: 12px;
             }
 
             h1 {
                 font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .form-group {
+                margin-bottom: 18px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="number"],
+            select,
+            textarea {
+                padding: 11px 12px;
+                font-size: 16px;
+            }
+
+            .checkbox-group {
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .submit-btn {
+                padding: 13px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .logo img {
+                width: 100px;
             }
         }
     </style>
@@ -155,7 +253,7 @@
 <body>
     <div class="form-container">
         <div class="logo">
-            <img src="./img/logo.png" alt="Logo Bourse Tech">
+            <img src="../img/logo.png" alt="Logo Bourse Tech">
         </div>
 
         <h1>Inscription Bourse Tech</h1>
@@ -194,6 +292,8 @@
                     <option value="college">Collège</option>
                     <option value="lycee">Lycée</option>
                     <option value="universite">Université</option>
+                    <option value="master">Master</option>
+                    <option value="doctorat">Doctorat</option>
                     <option value="autre">Autre</option>
                 </select>
             </div>
@@ -217,58 +317,11 @@
         </form>
 
         <div class="back-link">
-            <a href="page1.html">← Retour à l'accueil</a>
+            <a href="../page1.html">← Retour à l'accueil</a>
         </div>
     </div>
-    <script>
-        const form = document.getElementById('inscriptionForm');
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const inscription = {
-                nom: form.nom.value.trim(),
-                email: form.email.value.trim().toLowerCase(),
-                telephone: form.telephone.value.trim(),
-                age: form.age.value || null,
-                ville: form.ville.value.trim(),
-                niveau: form.niveau.value,
-                motivation: form.motivation.value.trim(),
-                conditions: form.conditions.checked,
-                dateInscription: new Date().toISOString()
-            };
-
-            const saved = localStorage.getItem('inscriptions');
-            const inscriptions = saved ? JSON.parse(saved) : [];
-
-            // Vérifier si l'email (et éventuellement le nom) existe déjà
-            const existeDeja = inscriptions.some(item =>
-                item.email === inscription.email
-                // && item.nom.toLowerCase() === inscription.nom.toLowerCase()
-            );
-
-            if (existeDeja) {
-                alert('Une inscription avec cet email existe déjà.');
-                return;
-            }
-
-            inscriptions.push(inscription);
-            localStorage.setItem('inscriptions', JSON.stringify(inscriptions));
-
-            form.reset();
-
-            console.log('Inscriptions sauvegardées :', inscriptions);
-            console.log('Redirection vers submit-inscription.html');
-            window.location.href = 'submit-inscription.html';
-        });
-    </script>
-
-    <script>
-        const saved = localStorage.getItem('inscriptions');
-        const inscriptions = saved ? JSON.parse(saved) : [];
-        console.log('Sur submit-inscription.html :', inscriptions);
-    </script>
-
+    <script src="inscriptions.js"></script>
 </body>
 
 </html>
