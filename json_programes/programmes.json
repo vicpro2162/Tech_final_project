@@ -1,0 +1,59 @@
+  {
+    "1": {
+      "id_atelier" : "" ,
+      "titre": "Atelier numérique",
+      "imagefor": "img/image(1).png",
+      "formateur": "Mr Florent",
+      "image": "img/NUMERIQUE (1).jpg",
+      "contenu": "L’atelier du numérique de la Tech Academy est un programme conçu pour initier les jeunes au monde de la programmation, de l’informatique et des nouvelles technologies. Il leur permet de découvrir différents langages de programmation, d’explorer la robotique et de développer des compétences essentielles pour comprendre le monde digital qui les entoure. Grâce à une approche progressive et interactive, l’atelier transforme l’apprentissage du numérique en une expérience motivante, créative et accessible à tous.   <h3>Bénéfices pour un jeune</h3>L’atelier du numérique de la Tech Academy est un programme conçu pour initier les jeunes au monde de la programmation, de l’informatique et des nouvelles technologies. Il leur permet de découvrir différents langages de programmation, d’explorer la robotique et de développer des compétences essentielles pour comprendre le monde digital qui les entoure. Participer à l’atelier du numérique offre de nombreux avantages pour le développement personnel, scolaire et professionnel d’un jeune :  <ul> <li>Développement de la logique et de la pensée informatique Apprendre des langages comme Scratch, Python, Java/JavaScript, HTML/CSS, PHP permet au jeune d’améliorer ses capacités d’analyse et de résoudre des problèmes de manière structurée et méthodique.</li><li>Introduction aux bases de la robotique Avec l’apprentissage du langage Arduino, le jeune comprend le fonctionnement des robots, des capteurs et des microcontrôleurs. Il peut créer, tester et améliorer ses propres prototypes</li><li>Maîtrise des outils numériques L’atelier comprend également l’utilisation d’outils informatiques indispensables comme Microsoft Office (Word, Excel, PowerPoint) et les applications Google (Docs, Sheets, Slides), renforçant ainsi les compétences scolaires et bureautiques</li><li>Créativité et innovation La programmation encourage la création de jeux, d’animations, de sites web ou de robots. L’élève développe son imagination tout en apprenant à concrétiser ses idées grâce au numérique.</li><li>Esprit d’équipe et collaboration Les projets de groupe favorisent l’échange, le partage d’idées et le travail collaboratif, des compétences essentielles dans le monde professionnel actuel.</li><li>Adaptabilité aux technologies futures En se familiarisant tôt avec divers langages et outils, le jeune développeune grande aisance face aux nouvelles technologies et s’adapte plus facilement aux évolutions numériques..Motivation intrinsèque </li><li>L’atelier donne envie d’apprendre par passion : les jeunes progressent parce qu’ils créent, testent, corrigent, et voient leurs projets prendre vie en direct.</li><h3>Témoignage</h3>Témoignage d’un jeune boursier qui au debut ... Lorem Ipsum is simply dummy text of the printing and typesetting  industry, commonly used as placeholder text in graphic design, publishing, and web development. It has been  the industry's standard dummy text since the 1500s, when an ...",
+      "video":"img/video/curiosité laurence.mp4",
+      "description": "Apprentissage des outils Word, Excel, PowerPoint, initiation à la programmation et robotique, création visuelle et partage de documents.",
+      "technologies_utilises": ["technologie_A", "technologie_B" , "technologie_C" , "technologie_D","technologie_E","technologie_F","technologie_G","technologie_H","technologie_J"]
+    },
+      
+
+    "2": {
+      "id_atelier" : "" ,
+      "titre": "GROWTH MINDSET",
+       "imagefor": "img/image(1).png",
+      "formateur": "Mme Nadia",
+      "image": "./img/GROW.jpeg",
+      "contenu": "Le growth mindset ou mindset de croissance, c'est l'attitude mentale qui consiste à voir les problèmes comme des opportunités. Des opportunités de grandir ou d'apprendre. Les obstacles deviennent des défis stimulants. Le fixed mindset, ou état d'esprit figé, cherche à éviter les problèmes de peur d'échouer.<h3>Bénéfices pour un jeune</h3>Inculquer un état d'esprit de croissance à un jeune écolier présente de nombreux avantages pour sa réussite scolaire et son développement personnel :<ul><li>Amélioration de la persévérance et de la résilience : L'écolier apprend à persévérer face à l'adversité et aux obstacles, les considérant comme des défis stimulants plutôt que comme des menaces.</li><li>Goût d'apprendre : Cet état d'esprit favorise l'amour de l'apprentissage tout au long de la vie, car l'enfant est motivé par le processus d'acquisition de nouvelles compétences et non seulement par le résultat final.</li><li>Meilleurs résultats scolaires : Des études ont montré que les interventions visant à développer un état d'esprit de croissance améliorent les notes, en particulier chez les élèves en difficulté, car ils sont plus enclins à fournir l'effort nécessaire.</li><li>Confiance en soi accrue : En comprenant que ses capacités peuvent se développer avec l'effort, l'enfant gagne en confiance en son potentiel, ce qui renforce son estime de soi.</li><li>Acceptation de la critique et des erreurs : Les erreurs et les retours (critiques) sont vus comme des moments d'apprentissage précieux, et non comme la preuve d'un manque d'intelligence.</li><li>Créativité et adaptabilité : Les enfants développent une plus grande créativité dans la résolution de problèmes et une meilleure adaptabilité face aux changements, car ils sont prêts à essayer différentes stratégies pour réussir.</li><li>Motivation intrinsèque : L'écolier est motivé par le désir de progresser et de se dépasser, plutôt que par la simple validation externe (notes, compliments sur le talent inné).</li></ul><h3>Témoignage</h3>Témoignage d’un jeune boursier qui au debut ... Lorem Ipsum is simply dummy text of the printing and typesetting industry, commonly used as placeholder  text in graphic design, publishing, and web development. It has been the industry's standard dummy text since the 1500s, when an ...",
+    "video":"./img/video/curiosité laurence.mp4",
+      "description": "Renforcer la condition physique et les valeurs sportives.",
+     "technologies_utilises": ["technologie_A","technologie_B","technologie_C","technologie_D"]
+    },
+    "3": {
+      "id_atelier" : "" ,
+      "titre": "SPORT",
+       "imagefor": "img/image(1).png",
+      "formateur": "Coach SAM",
+      "image": "./img/BASS.jpeg",
+       "contenu": " Le sport, c’est bien plus qu’une simple activité physique ; c’est une école de vie qui apprend à dépasser ses limites et à transformer les difficultés en forces. Chaque entraînement et chaque compétition deviennent des occasions de progresser et de se renforcer. À l’inverse, une attitude passive face au sport peut conduire à éviter l’effort par peur de l’échec ou du jugement.<h3>Bénéfices pour un jeune</h3><ul><li><strong>Croissance personnelle :</strong> Dépassement de ses limites et découverte de son potentiel caché à travers l'effort et la persévérance.</li><li><strong>Apprentissage continu :</strong> Capacité à apprendre de ses erreurs et à se perfectionner en permanence.</li><li><strong>Esprit d’équipe :</strong> Développement de la coopération, de la communication et de la synergie au sein d’un groupe.</li><li><strong>Résilience :</strong> Renforcement de la capacité à rebondir face aux défis et aux échecs.</li><li><strong>Confiance en soi :</strong> Valorisation des progrès accomplis et prise de conscience de ses capacités.</li><li><strong>Compétences sociales :</strong> Travail collectif, entraide et respect mutuel.</li><li><strong>Autodiscipline :</strong> Développement de la régularité et de l’engagement personnel.</li></ul>Témoignage d’un jeune boursier qui au debut ... Lorem Ipsum is simply dummy text of the printing and typesettingindustry, commonly used as placeholder <br>text in graphic design, publishing, and web development. It has been the industry's standard dummy text since the 1500s, when an ...",
+         "video":"img/video/WhatsApp Vidéo 2025-10-24 à 16.24.37_7fdb8431.mp4",
+    "description": "Renforcer la condition physique et les valeurs sportives.",
+    "technologies_utilises": ["technologie_A"]
+  },
+    "4": {
+      "id_atelier" : "" ,
+      "titre": "ATELIER DE LECTURE",
+       "imagefor": "img/image(1).png",
+      "formateur": "Mme Chelsea",
+      "image": "./img/LECTURE.jpg",
+       "contenu": "La lecture, bien plus qu'une simple activité, est une porte  ouverte sur l'imaginaire et la connaissance. Elle permet de développer  sa curiosité, d'enrichir sa pensée et de transformer les mots en  expériences uniques. Dans un atelier de lecture, chaque livre devient  une aventure et chaque texte un terrain d'exploration. À l’inverse, une  approche passive de la lecture peut limiter le plaisir de découvrir et  la capacité à s’ouvrir aux autres.<h3>Bénéfices pour un jeune</h3>Participer à cet atelier de lecture complet offre de multiples avantages pour le développement du jeune :<ul><li>Amélioration de la persévérance et de la résilience</li><li>Amélioration des compétences en lecture : Apprentissage de techniques de lecture rapide tout en maintenant une compréhension approfondie des textes</li><li>Développement de l'autonomie : Acquisition de méthodes d'organisation et de planification personnelle pour gérer efficacement ses projets</li><li>Renforcement de l'esprit d'équipe : Développement des capacités de collaboration, de communication et de travail en groupe</li><li>Augmentation de la confiance en soi : Valorisation des compétences à travers la création d'un CV percutant et la maîtrise de nouvelles méthodes de travail</li><li>Stimulation de la créativité : Encouragement à l'imagination et à l'innovation à travers des exercices pratiques</li><li>Développement de l'organisation personnelle : Apprentissage de techniques de gestion prévisionnelle pour anticiper et planifier ses objectifs</li><li>Motivation intrinsèque : Découverte du plaisir de lire et de progresser, au-delà des simples obligations scolaires<li></ul><h3>Témoignage</h3>Témoignage d’un jeune boursier qui au debut ... Lorem Ipsum is simply dummy text of the printing and typesettingindustry, commonly used as placeholder text in graphic design, publishing, and web development. It has been the industry's standard dummy text since the 1500s, when an ..." ,
+         "video":"./img/video/WhatsApp Vidéo 2025-10-22 à 23.41.59_28a49705.mp4",
+       "description": "Lire, analyser des textes et améliorer son expression écrite",
+        "technologies_utilises": ["technologie_A","technologie_B","technologie_C","technologie_D","technologie_I"]
+    },
+    "5": {
+      "id_atelier" : "" ,
+      "titre": "OBJECTIFS DOMAINE COGNITIF",
+       "imagefor": "img/image(1).png",
+      "formateur": "Mr Herbert",
+      "image": "./img/COGNI.jpeg",
+      "contenu": "Le growth mindset ou mindset de croissance consiste à voir les problèmes comme des opportunités..<h3>Bénéfices pour un jeune</h3> <ul><li>Amélioration de la persévérance et de la résilience</li><li>Goût d'apprendre</li><li>Meilleurs résultats scolaires</li><li>Confiance en soi accrue</li><li>Acceptation de la critique et des erreurs</li><li>Créativité et adaptabilité</li><li>Motivation intrinsèque</li></ul><h3>Témoignage</h3>Témoignage d’un jeune boursier qui au debut ... Lorem Ipsum is simply dummy text of the printing and typesetting industry, commonly used as placeholder text in graphic design, publishing, and web development. It has been the industry's standard dummy text since the 1500s, when an ..",
+      "video":"./img/video/WhatsApp Vidéo 2025-10-24 à 16.12.40_6327efe9.mp4 ",
+      "description": "Créer un projet collectif et faire des immersions en entreprise.",
+      "technologies_utilises": ["technologie_A"]
+    }
+  }
