@@ -1,0 +1,642 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bourse Tech</title>
+      <style>
+        body {
+          font-family: "Century Gothic", sans-serif;
+          background-color: #fff;
+          margin: 0;
+          padding: 0;
+          line-height: 1.6;
+          color: #222;
+        }
+
+        header.entete {
+          display: flex;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: #fff;
+          z-index: 1000;
+          padding: 10px 40px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          align-items: center;
+          justify-content: center;
+          /* centre tout le contenu */
+          gap: 130px;
+          /* espace entre logo et menu */
+        }
+
+      header.entete .logo img {
+          width: 150px;   
+          height: auto;  
+      }
+
+
+        .menu {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          /* espace entre les liens */
+        }
+
+        .menu a {
+          text-decoration: none;
+          color: black;
+          font-size: 16px;
+          padding: 5px 10px;
+        }
+
+        .menu a:hover {
+          background-image: url("./img/focused.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+        }
+
+                       .menu a.contact {
+  background-color: #9fc6f3; /* bleu normal */
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease; /* animation douce */
+}
+
+.menu a.contact:hover,
+.menu a.contact:focus,
+.menu a.contact:active {
+  background-color: #2570c0; /* bleu plus foncé */
+  color: #fff;               /* reste blanc */
+  background-image: none;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+        main {
+          width: 1054;
+          height: 1855;
+          top: 223px;
+          left: 109px;
+          opacity: 1;
+
+        }
+
+        h1 {
+          color: #78808b;
+          font-size: 28px;
+          margin-bottom: 20px;
+          margin-right: 80px;
+        }
+
+        .bourse-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 80px;
+          cursor: pointer;
+        }
+
+        .bourse-item img {
+          width: 150px;
+          margin-right: 40px;
+
+        }
+
+        .bourse-item ul {
+          color: #000000;
+          padding: 0;
+        }
+
+        .bourse-item li {
+          margin: 5px 0;
+          opacity: 0.8;
+          color: #979797;
+        }
+
+        .atelier-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0;
+        }
+
+        .atelier-text h4 {
+          margin-left: 0;
+          font-size: 18px;
+          color: #222;
+          margin-left: 600PX;
+        }
+
+        .atelier-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          flex-shrink: 0;
+          border: 2px solid #3E82E8;
+        }
+
+        .atelier-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .video {
+          margin: 30px 0;
+          text-align: center;
+        }
+
+        iframe {
+          width: 100%;
+          max-width: 800px;
+          border-radius: 10px;
+          border: none;
+        }
+
+      .back-btn {
+        background: #338DF1;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+
+      .back-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+  .back-image {
+      width: 100%;
+      }
+
+      .back-arrow {
+        width: 40px;
+        /* taille de la flèche */
+      }
+
+      .back-text {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+      }
+
+        /* Footer repositionné normalement (plus fixe) */
+        footer {
+          background-color: #338DF1;
+          color: white;
+          text-align: center;
+          padding: 20px 0;
+          position: relative;
+          /* plus de fixed */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 50px;
+          flex-wrap: wrap;
+        }
+
+        /* Laisse de l'espace sous le main pour voir le footer */
+        main {
+          max-width: 900px;
+          margin: 120px auto 60px auto;
+          padding: 0 20px;
+          padding-bottom: 250px;
+          /* ajustable selon la hauteur du footer */
+        }
+
+        /* Footer logos et boutons restent identiques */
+        footer .logoBourse img {
+          width: 130px;
+          height: auto;
+          filter: brightness(0) invert(1);
+        }
+
+        .copy-btn {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0 8px;
+          cursor: pointer;
+          display: inline-block;
+        }
+
+        .copy-btn img {
+          width: 32px;
+          height: 32px;
+          display: block;
+          filter: brightness(0) invert(1);
+        }
+    .copy-btnn {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0 8px;
+        cursor: pointer;
+        display: flex;
+        color: #fbfcfc;
+      }
+
+      .copy-btnn img {
+        width: 32px;
+        height: 32px;
+        display: block;
+        filter: brightness(0) invert(1);
+        white-space: nowrap;
+        /* Empêche le retour à la ligne */
+        flex-shrink: 0;
+        /* Empêche le rétrécissement */
+      }
+        /* Toast */
+        .toast {
+          position: fixed;
+          right: 20px;
+          bottom: 70px;
+          background: #222;
+          color: #fff;
+          padding: 10px 14px;
+          border-radius: 8px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity .18s ease, transform .18s ease;
+          pointer-events: none;
+          font-size: 14px;
+          z-index: 9999;
+        }
+
+        .toast.show {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+
+        /* cache pour lecteurs d'écran */
+        .sr-only {
+          position: absolute !important;
+          height: 1px;
+          width: 1px;
+          overflow: hidden;
+          clip: rect(1px, 1px, 1px, 1px);
+          white-space: nowrap;
+        }
+  .back-video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .back-formateur {
+    margin-left: 600px;
+  margin-top: 40PX;
+  }
+  .back-text {
+    margin-right: 60px;
+
+  }
+    .back-image{width: 900px; margin-top: 40px;
+        height: 530px;
+        border-radius: 10px;
+        overflow: hidden;
+        }
+        .back-image img { width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        
+      }
+      .formateur-image { margin-top: -50px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 2px solid #3E82E8;
+        float: right;
+
+      }
+
+      .formateur-image img { 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .tech-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.tech-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+      </style>
+      <script >
+            fetch(
+                "http://localhost:8000/api"
+            )
+                .then((response) => {
+                return response.json();
+            })
+            .then((json) =>{
+                console.log(json);
+            });
+            
+        </script>
+    </head>
+
+    <body>
+
+      <header class="entete">
+        <div class="logo">
+          <img src="./img/logo.png" alt="Logo de Club Tech" />
+        </div>
+        <div class="menu">
+          <a href="page1.html">Services</a>
+          <a href="page1.html.html#pro" class="active">Programmes</a>
+          <a href="page1.html#formateurs">Formateurs</a>
+          <a href="page1.html#technologies">Technologies</a>
+          <a href="contacte.html" class="contact">Contacts</a>
+        </div>
+      </header>
+
+      <main>
+
+        <div id="bourseContainer">
+          <H2>BOURSE</H2>
+          <DIv class="FLOU" style="color: #9a9393;"> Ce programme présente l’ensemble des matières et modules enseignés aux
+            boursiers dans le cadre de leur formation. Il vise à leur fournir les connaissances théoriques et pratiques
+            nécessaires pour renforcer leurs compétences et favoriser leur réussite académique et professionnelle.
+            <Br></Br><BR></BR>
+          </DIv>
+          <div class="bourse-item">
+            <h1 class="nb">01</h1>
+            <img src="./img/img1.png" alt="Atelier Numérique">
+            <ul>
+              <h2 class="bourse-ite" ondblclick="showDetails(1)">ATELIER NUMERIQUE</h2>
+              <li>Créer un site web</li>
+              <li>Gérer et administrer des bases de données</li>
+              <li>Concevoir un programme et une application web</li>
+              <li>Maîtriser les outils bureautiques</li>
+              <li>Utiliser les outils bureautique</li>
+            </ul>
+          </div>
+
+          <div class="bourse-item">
+            <h1 class="nb">02</h1>
+            <img src="./img/img2.png" alt="Growth Mindset">
+            <ul>
+              <h2 class="bourse-ite" ondblclick="showDetails(2)">GROWTH MINDSET</h2>
+              <li>Comprendre qu’il.elle peut devenir meilleur (comprendre le fonctionnement du cerveau)</li>
+              <li>Développer la confiance en soi</li>
+              <li>Être capable de se fixer des objectifs et les atteindre.</li>
+              <li>Etre capable de déceler les difficultés et d’y trouver des solutions</li>
+              <li>Faire de ses erreurs des sources</li>
+              <li>Apprendre à ne pas abandonner/ à être persévérant.</li>
+              <li>Aimer relever les défis/ sortir de sa zone de confort</li>
+              <li>Être un bon leader</li>
+            </ul>
+          </div>
+
+          <div class="bourse-item">
+            <h1 class="nb">03</h1>
+            <img src="./img/img3.png" alt="SPORT">
+            <ul>
+              <h2 class="bourse-ite" ondblclick="showDetails(3)">SPORT</h2>
+              <li>Développer les compétences techniques</li>
+              <li>Renforcer la condition physique</li>
+              <li>Être déterminé à atteindre ces objectifs</li>
+              <li>Adopter et promouvoir les bonnes valeurs diététiques</li>
+              <li>Développer l’esprit d’équipe et le respect</li>
+            </ul>
+          </div>
+
+          <div class="bourse-item">
+            <h1 class="nb">04</h1>
+            <img src="./img/img4.png" alt="Atelier de Lecture">
+            <ul>
+              <h2 class="bourse-ite" ondblclick="showDetails(4)">ATELIER DE LECTURE ET GESTION DE PROJET</h2>
+              <li>S'intéresser à lecture</li>
+              <li>Renforcer ses compétences d’expression écrite</li>
+              <li>Développer sa pensée créative et son esprit critique</li>
+              <li>Améliorer son vocabulaire</li>
+            </ul>
+          </div>
+
+          <div class="bourse-item">
+            <h1 class="nb">05</h1>
+            <img src="./img/img5.png" alt="Objectifs Domaine Cognitif">
+            <ul>
+              <h2 class="bourse-ite" ondblclick="showDetails(5)">OBJECTIFS DOMAINE COGNITIF</h2>
+              <li>Développer un projet individuel ou collectif bancable</li>
+              <li>Faire des immersions en entreprise</li>
+              <li>Participer à des concours technologiques</li>
+            </ul>
+          </div>
+        </div>
+
+<div id="detailsSection" style="display:none;">
+  <div class="back-container" >
+      <img src="./img/arrow-down.png" class="back-arrow" onclick="goBack()"> <div id="atelierTitle" class="back-text"></div>
+        <STRong><h1 id="titre" class="back-titre"></h1></STRong>
+  </div>
+  <p id="formateur" class="back-formateur" >
+    <div class="formateur-image">
+        <img id="imagefor" >
+    </div>
+  </p>
+      <div class="back-image">
+        <img id="image" >
+      </div>
+      
+    <br>
+  <div id="detailsContent"></div>
+  <video controls width="30%" id="video" class="back-video">
+        <source  type="video/mp4">
+  </video> <p id="description" class="back-description"></p>
+<div id="technologie_utilises" class="Techno"></div>
+
+</div>
+ </main>
+
+      <footer>
+        <div class="logoBourse">
+          <img src="./img/logo.png" alt="Logo de Club Tech" />
+        </div>
+
+        <button class="copy-btn" type="button" data-copy="https://www.tiktok.com/search?q=techacademy.tg&t=1764180389783" aria-label="Copier Tiktok">
+          <img src="./img/logo t.png" alt="LinkedIn">
+        </button>
+
+        <button class="copy-btn" type="button" data-copy="+22893442200" aria-label="Copier téléphone">
+          <img src="./img/Telephone.png" alt="Téléphone">
+        </button>
+
+        <button class="copy-btn" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+          <img src="./img/At sign.png" alt="Email">
+        </button>
+
+        <button class="copy-btn" type="button" data-copy="@techacademy.tg" aria-label="Copier Instagram">
+          <img src="./img/Instagram.png" alt="Instagram">
+        </button>
+                    <a class="copy-btnn" href="./contacte.html" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+        <STrong> Ecrivez-nous</STrong> <img src="./img/Icon(1).png" alt="Email"> </a>
+      </footer>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="a11y" class="sr-only" aria-live="polite"></div>
+
+      <script>
+        // Copier texte dans le presse-papier
+        const buttons = document.querySelectorAll('.copy-btn');
+        const toast = document.getElementById('toast');
+        const a11y = document.getElementById('a11y');
+
+        async function copyToClipboard(text) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch (err) {
+            try {
+              const ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed';
+              ta.style.left = '-9999px';
+              document.body.appendChild(ta);
+              ta.select();
+              const ok = document.execCommand('copy');
+              document.body.removeChild(ta);
+              return ok;
+            } catch (e) {
+              return false;
+            }
+          }
+        }
+
+        function showToast(message, duration = 2000) {
+          toast.textContent = message;
+          a11y.textContent = message;
+          toast.classList.add('show');
+          clearTimeout(showToast._t);
+          showToast._t = setTimeout(() => {
+            toast.classList.remove('show');
+            a11y.textContent = '';
+          }, duration);
+        }
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const value = btn.getAttribute('data-copy');
+            const ok = await copyToClipboard(value);
+            if (ok) showToast('Copié : ' + value);
+            else showToast('Échec — copiez manuellement.');
+          });
+        });
+        // fin copie manuellement
+       
+       
+        const video = document.getElementById("myVideo");
+
+
+/* ================================
+   VARIABLES GLOBALES
+================================ */
+let programmes = {};
+let technologies = {};
+let dataLoaded = false;
+
+/* ================================
+   CHARGEMENT DES JSON
+================================ */
+Promise.all([
+  fetch("json_programes/programmes.json").then(res => res.json()),
+  fetch("json_programes/technologies.json").then(res => res.json())
+])
+.then(([progData, techData]) => {
+
+  programmes = progData;
+
+  techData.forEach(tech => {
+    if (tech.id_technologies) {
+      technologies[tech.id_technologies] = tech;
+    }
+  });
+
+  dataLoaded = true;
+})
+.catch(err => console.error(err));
+
+/* ================================
+   AFFICHAGE DES DÉTAILS
+================================ */
+function showDetails(id) {
+
+  if (!dataLoaded || !programmes[id]) return;
+
+  const data = programmes[id];
+
+  document.getElementById("atelierTitle").textContent = data.titre;
+  document.getElementById("formateur").textContent = "Formateur : " + data.formateur;
+  document.getElementById("image").src = data.image;
+  document.getElementById("imagefor").src = data.imagefor;
+  document.getElementById("video").src = data.video;
+
+  document.getElementById("detailsContent").innerHTML = data.contenu;
+  document.getElementById("description").innerHTML = data.description;
+
+  /* =========================
+     TECHNOLOGIES UTILISÉES
+  ========================= */
+  const technoContainer = document.getElementById("technologie_utilises");
+  technoContainer.innerHTML = "<h3>Technologies utilisées : </h3>";
+
+  if (Array.isArray(data.technologies_utilises)) {
+
+    data.technologies_utilises.forEach(code => {
+      const tech = technologies[code];
+
+      if (tech) {
+        technoContainer.innerHTML += `
+          <div class="tech-item">
+            <img src="${tech.icone}" alt="${tech.nom}">
+            <span>${tech.nom}</span>
+            <span>(${tech.categorie})</span>
+            <span>: Version ${tech.version}</span>
+          </div>
+        `;
+      }
+    });
+  }
+
+  document.getElementById("bourseContainer").style.display = "none";
+  document.getElementById("detailsSection").style.display = "block";
+}
+
+/* ================================
+   RETOUR
+================================ */
+function goBack() {
+  document.getElementById("detailsSection").style.display = "none";
+  document.getElementById("bourseContainer").style.display = "block";
+}
+
+
+</script>
+
+    </body>
+
+    </html>

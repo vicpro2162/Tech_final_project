@@ -1,0 +1,927 @@
+                      <!DOCTYPE html>
+                      <html lang="fr">
+                      <head>
+                        <meta charset="UTF-8" />
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+                      <title>Bourse Tech</title>
+                        <style>
+                          /* ==== GLOBAL ==== */
+                          body {
+                            width: 90%;
+                            margin: 0;
+                            font-family: "Century Gothic",sans-serif;
+                            background-color: #fdfdfd;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center; /* Centre horizontalement tout le contenu */
+                          }
+
+                          ul {
+                            font-family: "Century Gothic",sans-serif;
+                            font-weight: 200;
+                            font-style: ExtraLight;
+                            font-size: 20px;
+                            line-height: 26px;
+                            color: #848484;
+                            padding: 0;
+                          }
+
+                          h2 {
+                            color: #222;
+                          }
+    h4 {  font-family: "Century Gothic",sans-serif;
+                            color: #000000;
+                          }
+                          a {
+                            text-decoration: none;
+                            color: black;
+                          }
+
+                          .container {
+                            max-width: 1280px;
+                            width: 100%;
+                            margin: 0 auto; /* Centre horizontalement */
+                            padding: 0 40px;
+                            box-sizing: border-box;
+                          }
+
+                        body {
+                          font-family: "Century Gothic", sans-serif;
+                          background-color: #fff;
+                          margin: 0;
+                          padding: 0;
+                          line-height: 1.6;
+                          color: #222;
+                        }
+
+                       header.entete {
+          display: flex;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: #fff;
+          z-index: 1000;
+          padding: 10px 40px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          align-items: center;
+          justify-content: center;
+          /* centre tout le contenu */
+          gap: 130px;
+          /* espace entre logo et menu */
+        }
+
+      header.entete .logo img {
+          width: 150px;   
+          height: auto;  
+      }
+
+
+        .menu {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          /* espace entre les liens */
+        }
+
+        .menu a {
+          text-decoration: none;
+          color: black;
+          font-size: 16px;
+          padding: 5px 10px;
+        }
+
+        .menu a:hover {
+          background-image: url("./img/focused.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+        }
+
+                       .menu a.contact {
+  background-color: #9fc6f3; /* bleu normal */
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease; /* animation douce */
+}
+
+.menu a.contact:hover,
+.menu a.contact:focus,
+.menu a.contact:active {
+  background-color: #2570c0; /* bleu plus foncé */
+  color: #fff;               /* reste blanc */
+  background-image: none;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+                      
+                      .banner-text-title{
+                          color: #3E82E8;
+                          text-transform: uppercase;
+                      }
+
+                      .bc{
+                          height: 234.31px;
+                          width:502px;
+                          margin: 0;
+                          padding: 0;
+                      }
+
+                      .banner-text-content{
+                          margin-left: 140px;
+                          padding: 0;
+                          width: 594px;
+                          height: 315.15px;
+                          transform:translateY(50px);
+                          left: 146px;
+                          opacity: 1;
+                        
+                      }
+
+                      h1 {
+                          font-size: 30px;
+                          margin-bottom: 20px;
+                      }
+      h3 {
+                          font-size: 27px;
+                        margin-right: 250PX;
+                       
+                      }
+
+
+  .banner-button{
+      border-radius: 20px;
+      margin-right: 10px;
+      padding: 10px;
+      color: white;
+      background-color: #3E82E8;
+      /* box-shadow retiré d'ici */
+  }
+
+  /* Box-shadow et couleur changent au survol */
+  .banner-button:hover,
+  .banner-button:focus,
+  .banner-button:active {
+      color: #fdfdfd;
+      background-color: #025adf;
+      box-shadow: 0 4px 20px #3E82E8; /* apparaît seulement au hover */
+  }
+
+  /* Pour vos .prog */
+  .prog{
+      border-radius: 20px;
+      border: 1px solid black;
+      margin-right: 10px;
+      padding: 10px;
+      color: black; 
+      /* box-shadow retiré d'ici */
+  }
+
+  .prog:hover,
+  .prog:focus,
+  .prog:active {
+      color: #000000;
+      background-color: #c1c4c7;
+      box-shadow: 0 4px 20px #a4a7aa; /* apparaît seulement au hover */
+  }
+
+    .arrow {
+    width: 20px;
+    margin-left: 10px;
+    mix-blend-mode: multiply;
+  }
+
+                      .banner-footer-text-contents {
+                          display: flex;
+                          font-size: large;
+                          gap: 130px; /* espace horizontal */
+                      }
+
+                      .persona{
+                          z-index:1 ;
+                          margin: 0;
+                          padding: 0;
+                          position: absolute;
+                          margin-top: -430px;
+                          width: 800px;
+                          height: 750px;
+                          left: 610px;
+                          opacity: 1;
+
+                      }
+
+                      .back{
+                          margin: 0;
+                          padding: 0;
+                          z-index:0;
+                          position: relative;
+                          filter: blur(80px);
+                          width: 800px;
+                          height: 550px;
+                          left: 598px;
+                          opacity: 1;
+                          transform: translateY(-300px);
+
+                      }
+
+
+
+                      .services-banner{
+                          position: relative;
+                          width: 1280px;
+                          height: 636px;
+                          top: 83px;
+                      }
+
+
+                      header{
+                          margin-bottom: 10px;
+                      }
+
+                      .banner-footer-text-contents p{
+                          transform: translateX(100px);
+                          margin-right: 100px;
+                          color: #848484;
+                          width: 1280;
+                      height: 76;
+                      top: 6px;
+                      left: 2px;
+                      opacity: 1;
+                      gap: 500PX
+                      ; margin-top: -100PX;
+                      }
+
+
+                      hr{
+                          opacity: 0.5;
+                          margin-bottom: 200px;
+                      }
+      .s2 {
+        margin-left: 300px; /* conserve ton style */
+        padding-top: 50px;
+        max-width: 1280px;
+        
+      }
+
+      /* Conteneur des programmes en colonne */
+      .pg2 {
+        display: flex;
+        flex-direction: column; /* empile les programmes verticalement */
+        gap: 60px; /* espace vertical entre les programmes */
+      }
+
+      /* Chaque programme */
+      .i1, .i2, .i3, .i4 {
+        display: flex;
+        flex-direction: row; /* numéro à gauche, image et texte à droite */
+        gap: 70px;    /* espace horizontal entre numéro, image et texte */
+        align-items: center;
+        margin-bottom: 0;  /* plus besoin de margin-bottom car gap gère l'espacement */
+      }
+
+      /* Numéro du programme */
+      .nb {
+        font-size: 50px;
+        color: grey;
+        font-weight: bold;
+      }
+
+      /* Image des programmes */
+      .ig1, .ig2, .ig3, .ig4 {
+        width: 300px; /* respecte ton style */
+        height: auto;
+      }
+
+      /* Liste et items */
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 5px 0;
+        opacity: 0.5;
+      }
+
+      /* Titres dans la liste */
+      .i1 ul h2, .i2 ul h2, .i3 ul h2, .i4 ul h2 {
+        margin-bottom: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #222;
+      }
+
+      /* Alignement du texte sous chaque image */
+      .i1 ul li, .i2 ul li, .i3 ul li, .i4 ul li {
+        font-size: 20px;
+      }
+
+      /* Bouton "Voir d’avantage" */
+      .plus {
+        border-radius: 15px;
+        border: 1px solid #3E82E8;
+        background-color: #3E82E8;
+        color: white;
+        padding: 10px;
+        width: 213px;
+        height: 49px;
+        margin-top: 30px;
+      }
+
+                      .banner-text-title {
+                          font-size: 24px;
+                          font-weight: bold;
+                          margin-bottom: 20px;
+                          margin:0;
+                          padding: 0;
+                      }
+
+                      .banner-text-description{
+
+                          margin-bottom: 30px;
+                      }
+
+                      .services{
+                          background-size: cover;
+                          background-position: center;
+                          width: 70px;
+                          height: 30px;
+                      }
+
+                      .texte{
+                          display:flex;
+                      }
+
+                      .nb{
+                          font-size:50px;
+                          color:grey
+                      }
+                      .logo img{
+                          width: 200px;
+                      }
+
+                      .s2{
+                          width: 1280px;
+                          height: 1173px;
+                          top: 712px;
+                      }
+
+                      .plus{
+                          border-radius: 15px;
+                          border: 1px solid #fcfdff;
+                          background-color:#00bbff;
+                          color: white;
+                          padding: 10px;
+                          width: 213px;
+                          height: 49px;
+                        
+                          margin-left: 914px;
+                          margin-top: 100px;
+                      }
+                      .plusF{
+                          border-radius: 15px;
+                          border: 1px solid #3E82E8;
+                          background-color:#3E82E8;
+                          color: white;
+                          padding: 10px;
+                          width: 13px;
+                          height: 49px;
+                        
+                          margin-left: 914px;
+                      }
+                      .form {
+                          display: flex;
+                          position: relative;
+                          align-items: center;
+                          margin-bottom: 150PX;
+                          margin-top: -150PX;
+                          margin-left: 120px;
+                      }
+
+                      /* On réduit les images 1 et 3 */
+                      .form1 img,
+                      .form3 img {
+                          width: 18em;
+                      }
+
+                      .form2 img {
+                          width: 25em;
+                      }
+
+                      /* Placement + effets */
+                      .form1 {
+                          transform: translateX(100px);
+                          z-index: 0;
+                      }
+                      .form3 {
+                          transform: translateX(-100px);
+                          z-index: 0;
+                      }
+                      .form2 {
+                          z-index: 1;
+                      }
+                      .item {
+                          padding-left: 200px;
+                                  gap: 60px; /* espace vertical entre les programmes */
+
+                      }
+                       .item {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.tech {
+  text-align: center;
+}
+
+.tech img {
+  width: 210px;      
+  height: 210px; box-shadow: 0 4px 20px #a4a7aa;
+}
+
+.tech img:hover,
+  .tech img:focus,
+  .tech img:active {
+ box-shadow: 0 4px 20px #0080ff;
+  }
+.tech p {
+  margin-top: 19px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+                      /* Style du texte sous chaque image */
+                      .form-card {
+                          text-align: center;
+                          width: max-content;
+                      }
+
+                      .form-card p {
+                          margin-top: 3px;
+                          font-size: 0.9em;
+                          color: #666;
+                      }
+                      #formateurs {
+                          margin-top: -150px; /* ajuste la valeur */
+                      }
+                    
+                      footer {
+                        background-color: #338DF1;
+                        color: white;
+                        text-align: center;
+                        padding: 20px 0;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 50px;
+                        flex-wrap: wrap;
+                        width: 1580px;
+                        top: 100px;
+                      }
+
+                      /* Logo */
+                      footer .logoBourse img {
+                        width: 130px;
+                        height: auto;
+                        filter: brightness(0) invert(1);
+                      }
+
+                      /* Boutons d’icônes */
+                      .copy-btn {
+                        background: none;
+                        border: none;
+                        padding: 0;
+                        margin: 0 8px;
+                        cursor: pointer;
+                        display: inline-block;
+                      }
+
+                      .copy-btn img { 
+                        width: 32px;
+                        height: 32px;
+                        display: block;
+                        filter: brightness(0) invert(1);
+                      }
+      .copy-btnn {
+          background: none;
+          border: none;
+          padding: 0;
+          margin: 0 8px;
+          cursor: pointer;
+          display: flex;
+          color: #fbfcfc;
+        }
+
+        .copy-btnn img {
+          width: 32px;
+          height: 32px;
+          display: block;
+          filter: brightness(0) invert(1);
+          white-space: nowrap;
+          /* Empêche le retour à la ligne */
+          flex-shrink: 0;
+          /* Empêche le rétrécissement */
+        }
+                      /* Toast */
+                      .toast {
+                        position: fixed;
+                        right: 20px;
+                        bottom: 70px;
+                        background: #222;
+                        color: #fff;
+                        padding: 10px 14px;
+                        border-radius: 8px;
+                        box-shadow: 0 6px 20px rgba(0,0,0,.2);
+                        opacity: 0;
+                        transform: translateY(10px);
+                        transition: opacity .18s ease, transform .18s ease;
+                        pointer-events: none;
+                        font-size: 14px;
+                        z-index: 9999;
+                      }
+
+                      .toast.show { 
+                        opacity: 1; 
+                        transform: translateY(0); 
+                        pointer-events: auto; 
+                      }
+
+                      /* Accessibilité */
+                      .sr-only {
+                        position: absolute !important;
+                        height: 1px;
+                        width: 1px;
+                        overflow: hidden;
+                        clip: rect(1px,1px,1px,1px);
+                        white-space: nowrap;
+                      }
+  #myCarousel {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 200px;
+  }
+
+  .carousel-inner {
+    height: 600px;
+  }
+
+
+  .carousel-inner .item {
+    text-align: center;
+    transform: scale(0.85);
+    transition: 1.5s;
+  }
+
+  .carousel-inner .item.active {
+  transform: scale(1);
+}
+
+/* Image du formateur */
+.carousel-inner img {
+  width: 80%;
+  max-width: 580px;
+  border-radius: 50%;
+  margin-bottom: -20px;
+  margin-left: 70px;
+}
+
+/* Flèches */
+.carousel-control {
+  background: none !important;
+  opacity: 1;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.carousel-control .glyphicon {
+  color: #000;
+  font-size: 32px;
+}
+
+.carousel-indicators {
+  bottom: -6px;   /* plus le nombre est grand, plus ça descend */
+}
+
+.carousel-indicators li {
+  background-color: #ff0000;
+}
+
+.carousel-indicators .active {
+  background-color: #000000;
+}
+
+
+                        </style>
+                  <!-- favicon -->
+                  <link rel="shortcut icon" type="image/x-icon" href="./img/logo-removebg-preview.png">
+                <script >
+                  fetch(
+                      "http://localhost:8000/api"
+                  )
+                      .then((response) => {
+                      return response.json();
+                  })
+                  .then((json) =>{
+                      console.log(json);
+                  });
+                  
+              </script></head>
+
+                <body>
+                  <header class="entete">
+                    <div class="logo">
+                      <img src="./img/logo.png" alt="Logo de Club Tech" />
+                    </div>
+                    <nav class="menu">
+                      <a href="#SER" class="services">Services</a>
+                      <a href="#pro" class="programme">Programmes</a>
+                      <a href="#formateurs" class="formateurs">Formateurs</a>
+                      <a href="#technologies" class="technologies">Technologies</a>
+                      <a href="contacte.html" class="contact">Contacts</a>
+                    </nav>
+                  </header>
+                  <section class="services-banner">
+                    <div class="bc">
+                      <div class="banner-text-content"><BR></BR>
+                        <h1 class="banner-text-title"> Ce que nous offrons</h1>
+                        <h2 class="banner-text-subtitle"> Des bourses pour découvrir, construire des bases numérique et développez un
+                          état d'esprit de croissance.</h2>
+                        <p class="banner-text-description">
+                          En 3 ans, nous guidons nos boursiers vers des carrières florissantes. Notre programme vous donne de solides
+                          bases en numérique et vous aide à
+                          développer une mentalité d’apprentissage continu, essentielle pour relever les défis technologiques et
+                          professionnels. Vous apprendrez à
+                          vous adapter, persévérer et transformer chaque obstacle en opportunité, afin de construire des compétences
+                          solides et une confiance durable
+                          pour réussir dans un monde en constante évolution.</p>
+                        <a href="formulaire.html" class="banner-button"> Postuler à la bourse </a>
+                        <a href="#pro" class="prog"> Les Programmes <img src="./img/arrow-down - Copie.png" class="arrow"> </a>
+                      </div> <BR></BR>
+                      <img src="./img/service-banner-illustration.png" alt="Banner de Club Tech" class="persona" id="SER" />
+                      <img src="./img/service-banner-background-decoration.png" alt="Background de Club Tech" class="back" />
+                    </Div>
+
+
+                  </section><HR></HR>
+                  <div class="banner-footer-text-contents" id="pro">
+                    <p class="banner-footer-text-content">Programmation et robotique </p>
+                    <p class="banner-footer-text-content"> Growth mindset et activités <br /> sportives </p>
+                    <p class="banner-footer-text-content"> Gestion de projet </p>
+                  </div>
+      <section class="s2">
+        <br><br>
+        <h2 class="banner-text-title">Ateliers</h2>
+        <h1>Ce que vous apprendrez</h1>
+        <div class="pg2">
+
+          <!-- 01 NUMÉRIQUE -->
+          <div class="i1">
+            <h1 class="nb">01</h1>
+            <img src="./img/img_1.png" alt="Programme Numérique" class="ig1">
+            <ul>
+              <h2>Numérique</h2>
+              <li>Créer un site web</li>
+              <li>Gérer et administrer des bases de données</li>
+              <li>Design avec Canva</li>
+            </ul>
+          </div>
+
+          <!-- 02 GROWTH MINDSET -->
+          <div class="i2">
+            <h1 class="nb">02</h1>
+            <img src="./img/img_2.png" alt="Programme Growth Mindset" class="ig2">
+            <ul>
+              <h2>Growth mindset</h2>
+              <li>Comprendre qu’il/elle peut devenir meilleur</li>
+              <li>Développer la confiance en soi</li>
+            </ul>
+          </div>
+
+          <!-- 03 SPORT -->
+          <div class="i3">
+            <h1 class="nb">03</h1>
+            <img src="./img/img_3.png" alt="Programme Sport" class="ig3">
+            <ul>
+              <h2>Sport</h2>
+              <li>Fitness</li>
+              <li>Basketball</li>
+            </ul>
+          </div>
+
+          <!-- 04 LECTURE -->
+          <div class="i4">
+            <h1 class="nb">04</h1>
+            <img src="./img/img_3.png" alt="Programme Lecture" class="ig4">
+            <ul>
+              <h2>Lecture et gestion de projet</h2>
+              <li>S'intéresser à la lecture</li>
+              <li>Renforcer ses compétences d’expression écrite</li>
+            </ul>
+          </div>
+
+        </div>
+        <a href="page2.html" class="plus" id="formateurs">Voir d'avantage >></a>
+      </section>
+                  <section >
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicateurs -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="./img/image(1).png"class="form-card form3"  alt="formateur" style="width:80%;">
+                        <h3><STRong>  AHLONKO</STRong> Pinto Toyi
+                          <p>Directeur Général</p>
+          </div>
+
+        <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>ADAMOU</STrong> Nadia
+                          <p>Directrice pédagogique</p>
+                        </h3>
+          </div>
+          <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>ANAGONOU</STrong> Salomon
+                          <p>Assistant Responsable pédagogique
+</p>
+                        </h3>
+          </div>
+          <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>BANKA</STrong> Samuel
+                          <p>Coach Sportif</p>
+                        </h3>
+          </div>
+          <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>AJAVON</STrong> chelsea
+                          <p>formatrice Tech</p>
+                        </h3>
+          </div>
+           <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>KOUYOU</STrong> Believe
+                          <p>Formateur en Electronique de Base</p>
+                        </h3>
+          </div>
+           <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>KOUEKOU</STrong> Herbert
+                          <p>Formateur en Electronique de Base</p>
+                        </h3>
+          </div>
+           <div class="item">
+            <img src="./img/image(1).png" class="form-card form3" alt="formateur" style="width:80%;">
+            <h3><STrong>MONSIEUR </STrong> Florent
+                          <p>Formateur en programmation</p>
+                        </h3>
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+                    </div>   
+                    
+                  </section><HR></HR>
+                 <section class="technologie" id="technologies">
+  <div class="footer-top">
+    <div class="item">
+
+      <div class="tech">
+        <img src="img/workplace_8416579.png" alt="Bureautique">
+        <p>Bureautique</p>
+      </div>
+
+      <div class="tech">
+        <img src="img/programming-language_16813200.png" alt="Programmation">
+        <p>Programmation</p>
+      </div>
+
+      <div class="tech">
+        <img src="img/virtual-reality_6451831.png" alt="Réalité virtuelle">
+        <p>Réalité virtuelle</p>
+      </div>
+
+      <div class="tech">
+        <img src="img/robot_4401973.png" alt="Robotique">
+        <p>Robotique</p>
+      </div>
+
+    </div>
+  </div>
+
+
+                    </div>
+                  </SEction><HR>
+                  <footer id="contact">
+                    <div class="logoBourse">
+                      <img src="./img/logo.png" alt="Logo de Club Tech" />
+                    </div>
+
+                    <button class="copy-btn" type="button" data-copy="https://www.tiktok.com/search?q=techacademy.tg&t=1764180389783" aria-label="Copier Tiktok">
+                      <img src="./img/logo t.png" alt="LinkedIn">
+                    </button>
+
+                    <button class="copy-btn" type="button" data-copy="+22893442200" aria-label="Copier téléphone">
+                      <img src="./img/Telephone.png" alt="Téléphone">
+                    </button>
+
+                    <button class="copy-btn" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+                      <img src="./img/At sign.png" alt="Email">
+                    </button>
+
+                    <button class="copy-btn" type="button" data-copy="https://www.instagram.com/techacademy.tg/" aria-label="Copier Instagram">
+                      <img src="./img/Instagram.png" alt="Instagram">
+                    </button>
+                    <a class="copy-btnn" href="./contacte.html" type="button" data-copy="tech@gmail.com" aria-label="Copier email">
+          <STrong> Ecrivez-nous</STrong> <img src="./img/Icon(1).png" alt="Email"> </a>
+
+                  </footer>
+
+                  <!-- Toast -->
+                  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+                  <div id="a11y" class="sr-only" aria-live="polite"></div>
+                  <SCript>
+                    const buttons = document.querySelectorAll('.copy-btn');
+                    const toast = document.getElementById('toast');
+                    const a11y = document.getElementById('a11y');
+
+                    async function copyToClipboard(text) {
+                      try {
+                        await navigator.clipboard.writeText(text);
+                        return true;
+                      } catch (err) {
+                        try {
+                          const ta = document.createElement('textarea');
+                          ta.value = text;
+                          ta.style.position = 'fixed';
+                          ta.style.left = '-9999px';
+                          document.body.appendChild(ta);
+                          ta.select();
+                          const ok = document.execCommand('copy');
+                          document.body.removeChild(ta);
+                          return ok;
+                        } catch (e) {
+                          return false;
+                        }
+                      }
+                    }
+
+                    function showToast(message, duration = 2000) {
+                      toast.textContent = message;
+                      a11y.textContent = message;
+                      toast.classList.add('show');
+                      clearTimeout(showToast._t);
+                      showToast._t = setTimeout(() => {
+                        toast.classList.remove('show');
+                        a11y.textContent = '';
+                      }, duration);
+                    }
+
+                    buttons.forEach(btn => {
+                      btn.addEventListener('click', async () => {
+                        const value = btn.getAttribute('data-copy');
+                        const ok = await copyToClipboard(value);
+                        if (ok) showToast('Copié : ' + value);
+                        else showToast('Échec — copiez manuellement.');
+                      });
+                    });
+                  </SCript>
+                  <script src="./js/main.js">
+                    
+                  </script>
+                
+                </body>
+
+                </html>
